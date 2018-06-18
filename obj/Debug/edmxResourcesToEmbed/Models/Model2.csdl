@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PGA_HROModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblSubject">
+    <Key>
+      <PropertyRef Name="sjId" />
+    </Key>
+    <Property Name="sjId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sjBSN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="sjGender" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="sjDateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="sjDateOfDeath" Type="DateTime" Precision="0" />
+    <Property Name="sjMaritalStatusId" Type="Int32" />
+    <Property Name="sjIsInactive" Type="Boolean" Nullable="false" />
+    <Property Name="sjAnonymisedOn" Type="DateTime" Precision="3" />
+    <Property Name="sjWoonplaatsSource" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="sjWoonplaatsId" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="PGA_HROEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblSubjects" EntityType="Self.tblSubject" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,140 @@
+﻿@model WebApplication10.Models.tblImage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Persoonlijk Profiel</h2>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<div class="jumbotron">
+    
+    <div>
+        <div id="container" style="min-width: 310px; height: 200px; max-width: 300px; margin-left: 700px"></div>
+
+        <h4>tblImage</h4>
+        <hr/>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.imgLabel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.imgLabel)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.imgDescription)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.imgDescription)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.imgFileName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.imgFileName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.imgContentType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.imgContentType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.imgWidth)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.imgWidth)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.imgHeight)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.imgHeight)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.imgCreationDate)
+            </dt>
+
+
+            <dd>
+                @Html.DisplayFor(model => model.imgCreationDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.imgIsInActive)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.imgIsInActive)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+
+<script>
+
+    Highcharts.chart('container', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Kans op recidiveren'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: 'Recidiveert niet',
+                y: 61.41,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'Recidiveert wel',
+                y: 11.84
+            }, {
+
+            }]
+        }]
+    });
+</script>
+
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.imgId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

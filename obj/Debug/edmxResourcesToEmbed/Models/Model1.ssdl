@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PGA_HROModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblImage">
+    <Key>
+      <PropertyRef Name="imgId" />
+    </Key>
+    <Property Name="imgId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imgLabel" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="imgDescription" Type="text" />
+    <Property Name="imgFileName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="imgContentType" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="imgWidth" Type="int" Nullable="false" />
+    <Property Name="imgHeight" Type="int" Nullable="false" />
+    <Property Name="imgCreationDate" Type="datetime" Nullable="false" />
+    <Property Name="imgIsInActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PGA_HROModelStoreContainer">
+    <EntitySet Name="tblImage" EntityType="Self.tblImage" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

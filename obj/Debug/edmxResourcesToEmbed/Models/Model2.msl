@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PGA_HROModel1StoreContainer" CdmEntityContainer="PGA_HROEntities1">
+    <EntitySetMapping Name="tblSubjects">
+      <EntityTypeMapping TypeName="PGA_HROModel1.tblSubject">
+        <MappingFragment StoreEntitySet="tblSubject">
+          <ScalarProperty Name="sjId" ColumnName="sjId" />
+          <ScalarProperty Name="sjBSN" ColumnName="sjBSN" />
+          <ScalarProperty Name="sjGender" ColumnName="sjGender" />
+          <ScalarProperty Name="sjDateOfBirth" ColumnName="sjDateOfBirth" />
+          <ScalarProperty Name="sjDateOfDeath" ColumnName="sjDateOfDeath" />
+          <ScalarProperty Name="sjMaritalStatusId" ColumnName="sjMaritalStatusId" />
+          <ScalarProperty Name="sjIsInactive" ColumnName="sjIsInactive" />
+          <ScalarProperty Name="sjAnonymisedOn" ColumnName="sjAnonymisedOn" />
+          <ScalarProperty Name="sjWoonplaatsSource" ColumnName="sjWoonplaatsSource" />
+          <ScalarProperty Name="sjWoonplaatsId" ColumnName="sjWoonplaatsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

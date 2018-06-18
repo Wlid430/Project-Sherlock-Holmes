@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebApplication10.Models.tblImage>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Profielen</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.imgLabel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgFileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgContentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgWidth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgHeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgCreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgIsInActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgLabel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgFileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgContentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgWidth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgHeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgCreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgIsInActive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.imgId }) |
+            @Html.ActionLink("Persoonlijk profiel", "Details", new { id=item.imgId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.imgId })
+        </td>
+    </tr>
+}
+
+</table>

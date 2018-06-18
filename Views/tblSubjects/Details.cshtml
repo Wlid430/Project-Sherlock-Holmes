@@ -1,0 +1,149 @@
+﻿@model WebApplication10.Models.tblSubject
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Persoonlijk Profiel</h2>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div class="jumbotron">
+
+<div>
+    <div id="container" style="min-width: 310px; height: 250px; max-width: 350px; margin-left: 700px"></div>
+
+    <h4>tblSubject</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sjBSN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sjBSN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sjGender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sjGender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sjDateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sjDateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sjDateOfDeath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sjDateOfDeath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sjMaritalStatusId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sjMaritalStatusId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sjIsInactive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sjIsInactive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sjAnonymisedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sjAnonymisedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sjWoonplaatsSource)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sjWoonplaatsSource)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sjWoonplaatsId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sjWoonplaatsId)
+        </dd>
+
+    </dl>
+    <script>
+
+        Highcharts.chart('container',
+            {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Kans op recidiveren'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: [
+                            {
+                                name: 'Recidiveert niet',
+                                y: 61.41,
+                                sliced: true,
+                                selected: true
+                            }, {
+                                name: 'Recidiveert wel',
+                                y: 11.84
+                            }, {
+                            }
+                        ]
+                    }
+                ]
+            });
+    </script>
+
+</div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.sjId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+
+    

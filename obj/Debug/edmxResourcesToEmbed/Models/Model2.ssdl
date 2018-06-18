@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PGA_HROModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblSubject">
+    <Key>
+      <PropertyRef Name="sjId" />
+    </Key>
+    <Property Name="sjId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sjBSN" Type="varchar" MaxLength="25" />
+    <Property Name="sjGender" Type="varchar" MaxLength="15" />
+    <Property Name="sjDateOfBirth" Type="date" />
+    <Property Name="sjDateOfDeath" Type="date" />
+    <Property Name="sjMaritalStatusId" Type="int" />
+    <Property Name="sjIsInactive" Type="bit" Nullable="false" />
+    <Property Name="sjAnonymisedOn" Type="datetime" />
+    <Property Name="sjWoonplaatsSource" Type="varchar" MaxLength="25" />
+    <Property Name="sjWoonplaatsId" Type="int" />
+  </EntityType>
+  <EntityContainer Name="PGA_HROModel1StoreContainer">
+    <EntitySet Name="tblSubject" EntityType="Self.tblSubject" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

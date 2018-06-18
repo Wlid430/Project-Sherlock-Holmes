@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PGA_HROModelStoreContainer" CdmEntityContainer="PGA_HROEntities">
+    <EntitySetMapping Name="tblImages">
+      <EntityTypeMapping TypeName="PGA_HROModel.tblImage">
+        <MappingFragment StoreEntitySet="tblImage">
+          <ScalarProperty Name="imgId" ColumnName="imgId" />
+          <ScalarProperty Name="imgLabel" ColumnName="imgLabel" />
+          <ScalarProperty Name="imgDescription" ColumnName="imgDescription" />
+          <ScalarProperty Name="imgFileName" ColumnName="imgFileName" />
+          <ScalarProperty Name="imgContentType" ColumnName="imgContentType" />
+          <ScalarProperty Name="imgWidth" ColumnName="imgWidth" />
+          <ScalarProperty Name="imgHeight" ColumnName="imgHeight" />
+          <ScalarProperty Name="imgCreationDate" ColumnName="imgCreationDate" />
+          <ScalarProperty Name="imgIsInActive" ColumnName="imgIsInActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

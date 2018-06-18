@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PGA_HROModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblImage">
+          <Key>
+            <PropertyRef Name="imgId" />
+          </Key>
+          <Property Name="imgId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imgLabel" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="imgDescription" Type="text" />
+          <Property Name="imgFileName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="imgContentType" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="imgWidth" Type="int" Nullable="false" />
+          <Property Name="imgHeight" Type="int" Nullable="false" />
+          <Property Name="imgCreationDate" Type="datetime" Nullable="false" />
+          <Property Name="imgIsInActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PGA_HROModelStoreContainer">
+          <EntitySet Name="tblImage" EntityType="Self.tblImage" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PGA_HROModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblImage">
+          <Key>
+            <PropertyRef Name="imgId" />
+          </Key>
+          <Property Name="imgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imgLabel" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="imgDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imgFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="imgContentType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="imgWidth" Type="Int32" Nullable="false" />
+          <Property Name="imgHeight" Type="Int32" Nullable="false" />
+          <Property Name="imgCreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="imgIsInActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PGA_HROEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblImages" EntityType="Self.tblImage" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PGA_HROModelStoreContainer" CdmEntityContainer="PGA_HROEntities">
+          <EntitySetMapping Name="tblImages">
+            <EntityTypeMapping TypeName="PGA_HROModel.tblImage">
+              <MappingFragment StoreEntitySet="tblImage">
+                <ScalarProperty Name="imgId" ColumnName="imgId" />
+                <ScalarProperty Name="imgLabel" ColumnName="imgLabel" />
+                <ScalarProperty Name="imgDescription" ColumnName="imgDescription" />
+                <ScalarProperty Name="imgFileName" ColumnName="imgFileName" />
+                <ScalarProperty Name="imgContentType" ColumnName="imgContentType" />
+                <ScalarProperty Name="imgWidth" ColumnName="imgWidth" />
+                <ScalarProperty Name="imgHeight" ColumnName="imgHeight" />
+                <ScalarProperty Name="imgCreationDate" ColumnName="imgCreationDate" />
+                <ScalarProperty Name="imgIsInActive" ColumnName="imgIsInActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
